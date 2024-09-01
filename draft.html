@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eden Azoulay</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo">Eden Azoulay</div>
+      <div class="instruments">Harpsichord · Piano · Organ</div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#recordings">Selected Recordings</a>
+        <a href="#concerts">Schedule</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <div class="content">
+      <section id="about" class="section about">
+        <h2>About</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+              quam neque, hendrerit nec egestas non, dapibus a sem. Aliquam
+              consectetur laoreet faucibus. Quisque semper quam arcu, dignissim
+              sagittis augue fermentum quis. Aliquam auctor pretium tortor, at
+              fermentum libero. Sed dapibus mollis erat id congue. Etiam quis
+              vehicula quam. Proin suscipit blandit risus vel consequat. Morbi
+              quis augue felis. Proin vel ex felis. Nam venenatis malesuada
+              magna, sit amet viverra tellus sagittis sodales. Nunc non risus in
+              lorem aliquam sagittis.
+            </p>
+          </div>
+          <div class="about-photo">
+            <img src="myphoto.jpg" alt="Your Photo" />
+          </div>
+        </div>
+      </section>
+
+      <section id="recordings" class="section recordings">
+        <h2>Selected Recordings</h2>
+        <div class="recordings-table">
+          <a href="#" data-video="https://www.youtube.com/embed/your-video-link"
+            >Recording 1</a
+          >
+          <a
+            href="#"
+            data-video="https://www.youtube.com/embed/another-video-link"
+            >Recording 2</a
+          >
+          <a href="#" data-video="https://www.youtube.com/embed/your-video-link"
+            >Recording 3</a
+          >
+          <a href="#" data-video="https://www.youtube.com/embed/wzjWIxXBs_s"
+            >Recording 4</a
+          >
+          <a href="#" data-video="https://www.youtube.com/embed/your-video-link"
+            >Recording 5</a
+          >
+          <a
+            href="#"
+            data-video="https://www.youtube.com/embed/another-video-link"
+            >Recording 6</a
+          >
+        </div>
+      </section>
+
+      <div class="content">
+        <section id="about" class="section concerts">
+          <div id="concerts-sidebar">
+            <h2>Upcoming</h2>
+            <ul id="upcomingEvents">
+              <li onclick="toggleDetails('event1', true)">
+                Concert at Town Hall - Sep 15, 2024
+              </li>
+              <li onclick="toggleDetails('event2', true)">
+                Recital at Museum - Sep 20, 2024
+              </li>
+              <!-- Add more events here -->
+            </ul>
+
+            <h2>Past Events</h2>
+            <ul>
+              <li onclick="toggleDetails('pastEvent1', false)">
+                Spring Concert - Mar 25, 2024
+              </li>
+              <li onclick="toggleDetails('pastEvent2', false)">
+                Summer Gala - Jun 10, 2024
+              </li>
+              <!-- Add more past events here -->
+            </ul>
+          </div>
+
+          <div id="concert-content">
+            <div id="defaultMessage" class="event-details">
+              <h3>No Upcoming Events</h3>
+              <p>
+                There are no upcoming events at the moment. Please check back
+                later!
+              </p>
+            </div>
+
+            <div id="event1" class="event-details">
+              <h3>Concert at Town Hall</h3>
+              <p><strong>Date:</strong> September 15, 2024</p>
+              <p><strong>Time:</strong> 7:00 PM</p>
+              <p><strong>Location:</strong> Town Hall, Main Street</p>
+              <p>
+                <strong>Description:</strong> A wonderful evening featuring
+                classical piano and harpsichord pieces.
+              </p>
+              <!-- Link (optional) -->
+              <p class="event-link">
+                <a href="https://example.com/town-hall-concert" target="_blank"
+                  >Buy Tickets</a
+                >
+              </p>
+            </div>
+
+            <div id="event2" class="event-details">
+              <h3>Recital at Museum</h3>
+              <p><strong>Date:</strong> September 20, 2024</p>
+              <p><strong>Time:</strong> 6:30 PM</p>
+              <p><strong>Location:</strong> City Museum, Grand Hall</p>
+              <p>
+                <strong>Description:</strong> A solo recital exploring the works
+                of J.S. Bach and Handel.
+              </p>
+            </div>
+
+            <div id="pastEvent1" class="event-details">
+              <h3>Spring Concert</h3>
+              <p><strong>Date:</strong> March 25, 2024</p>
+              <p><strong>Time:</strong> 7:00 PM</p>
+              <p><strong>Location:</strong> City Auditorium</p>
+              <p>
+                <strong>Description:</strong> A delightful spring concert
+                featuring works by Mozart and Beethoven.
+              </p>
+            </div>
+
+            <div id="pastEvent2" class="event-details">
+              <h3>Summer Gala</h3>
+              <p><strong>Date:</strong> June 10, 2024</p>
+              <p><strong>Time:</strong> 8:00 PM</p>
+              <p><strong>Location:</strong> Grand Theater</p>
+              <p>
+                <strong>Description:</strong> A grand celebration of summer with
+                performances of popular classical pieces.
+              </p>
+            </div>
+
+            <!-- Additional event details can be added similarly -->
+          </div>
+        </section>
+      </div>
+
+      <section id="contact" class="section contact">
+        <h2>Contact</h2>
+        <p>
+          You can reach me at:
+          <a href="mailto:youremail@example.com">eden@eden.com</a>
+        </p>
+      </section>
+    </div>
+
+    <div class="overlay"></div>
+    <div class="recording-popup">
+      <iframe src="" frameborder="0" allowfullscreen></iframe>
+      <div class="close-btn">Close</div>
+    </div>
+
+    <div class="footer">
+      <p>&copy; 2024 Eden Azoulay. All rights reserved.</p>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
