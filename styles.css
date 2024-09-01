@@ -1,0 +1,375 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Playfair+Display:wght@400;700&display=swap");
+
+/* General Styles */
+body {
+  font-family: "Cormorant Garamond", serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f3e9;
+  color: #333;
+  line-height: 1.7;
+}
+::selection {
+  color: #fff;
+  background: #e74d3caf;
+}
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: background 0.3s ease;
+  font-family: "Playfair Display", serif;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between; /* Space between the logo and nav links */
+  align-items: center;
+}
+
+.header:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+.header .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.header .nav-links {
+  font-size: 1rem;
+  display: flex;
+  justify-content: flex-end; /* Align items to the right */
+  gap: 15px;
+  margin-right: 20px; /* Add margin to the right */
+}
+
+.header .nav-links a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+  padding-right: 20px; /* Add padding to avoid cutting off text */
+}
+
+.header .nav-links a:hover {
+  color: #e74c3c;
+}
+
+.header .instruments {
+  font-size: 1.1rem;
+  font-weight: 400; /* Lighter weight to contrast with the logo */
+  letter-spacing: 0.5px;
+  color: #555; /* Slightly darker gray for contrast */
+  text-align: center;
+  flex: 1; /* Allow it to take up space between the logo and nav links */
+}
+
+.header .instruments::before,
+.header .instruments::after {
+  content: "";
+  display: inline-block;
+  width: 20px; /* Space around the text */
+  height: 1px;
+  background-color: #555; /* Same color as the text */
+  vertical-align: middle;
+}
+
+.header .instruments::before {
+  margin-right: 10px; /* Space before the text */
+}
+
+.header .instruments::after {
+  margin-left: 10px; /* Space after the text */
+}
+.content {
+  max-width: 1200px;
+  margin: 100px auto 0; /* Reduced top margin from 150px to 100px */
+  padding: 20px;
+}
+
+.section {
+  margin-bottom: 50px;
+  background-color: #fff;
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-size: 20px; /* Increase the font size */
+  line-height: 1.5; /* Adjust line height for readability */
+}
+.section h2 {
+  position: relative;
+  margin-bottom: 20px; /* Space below the headline */
+  padding-bottom: 10px; /* Space for the line */
+}
+
+.section h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0; /* Start with zero width */
+  height: 2px;
+  background-color: #e74c3c; /* Color of the line */
+  transition: width 0.5s ease-in-out;
+}
+
+.section.visible h2::after {
+  width: 100%; /* Full width when section is visible */
+}
+.about-content {
+  display: flex;
+  align-items: flex-start; /* Align items to the top */
+  gap: 20px; /* Space between text and photo */
+}
+
+.about-text {
+  flex: 1;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.about-photo {
+  max-width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+.recordings-table {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.recordings-table a {
+  text-decoration: none;
+  color: #e74c3c;
+  background: #f7f3e9;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  transition: background 0.3s ease, transform 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.recordings-table a:hover {
+  background: #e74c3c;
+  color: #fff;
+  transform: scale(1.05);
+}
+.concert-item {
+  background: #f7f3e9;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.concert-item h3 {
+  font-size: 1.5rem;
+  color: #e74c3c;
+  margin-bottom: 10px;
+}
+
+.concert-item p {
+  margin: 5px 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  z-index: 999;
+}
+
+.recording-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 800px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.recording-popup iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+  border-radius: 10px;
+}
+
+.recording-popup .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #e74c3c;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.recording-popup.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.overlay.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f7f3e9;
+  font-size: 14px;
+  color: #555;
+  margin-top: 30px;
+}
+
+#concertSection {
+  max-width: 1200px;
+  margin: 40px auto;
+  display: flex;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensure the corners stay rounded */
+}
+
+#concerts-sidebar {
+  width: 250px;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 350px;
+  overflow-y: auto;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #95a5a6 transparent; /* Firefox */
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+/* Custom Scrollbar for WebKit Browsers */
+#concerts-sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+#concerts-sidebar::-webkit-scrollbar-thumb {
+  background-color: #95a5a6;
+  border-radius: 4px;
+}
+
+#concerts-sidebar h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+#concerts-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+#concerts-sidebar li {
+  margin-bottom: 10px;
+  cursor: pointer;
+  padding: 12px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: #2c3e50;
+}
+
+#concerts-sidebar li:hover {
+  background-color: #d1e7e0;
+  transform: scale(1.05);
+}
+
+#concert-content {
+  flex-grow: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.event-details {
+  display: none;
+  padding: 15px;
+  margin-top: 10px;
+  background-color: #ecf0f1;
+  border-left: 5px solid #2c3e50;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.event-details.active {
+  display: block;
+  max-height: 500px; /* Large enough to show full content */
+  opacity: 1;
+}
+.event-link {
+  margin-top: 10px;
+}
+
+.event-link a {
+  color: #1abc9c;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.event-link a:hover {
+  color: #16a085;
+}
+/* Make sure the section fits within larger layouts */
+@media (max-width: 768px) {
+  #concertSection {
+    flex-direction: column;
+  }
+
+  #concerts-sidebar {
+    width: 100%;
+    height: auto;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 0;
+    overflow-y: visible;
+  }
+}
