@@ -13,7 +13,7 @@
       <nav class="nav-links">
         <a href="#about">About</a>
         <a href="#recordings">Selected Recordings</a>
-        <a href="#concerts">Schedule</a>
+        <a href="#schedule">Schedule</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -24,17 +24,21 @@
         <div class="about-content">
           <div class="about-text">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-              quam neque, hendrerit nec egestas non, dapibus a sem. Aliquam
-              consectetur laoreet faucibus. Quisque semper quam arcu, dignissim
-              sagittis augue fermentum quis. Aliquam auctor pretium tortor, at
-              fermentum libero. Sed dapibus mollis erat id congue. Etiam quis
-              vehicula quam. Proin suscipit blandit risus vel consequat. Morbi
-              quis augue felis. Proin vel ex felis. Nam venenatis malesuada
-              magna, sit amet viverra tellus sagittis sodales. Nunc non risus in
-              lorem aliquam sagittis.
+              lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Vestibulum nec est sit amet purus ultricies aliquam. Nullam
+              hendrerit, nisl nec lacinia ultricies, nunc nisl ultricies libero,
+              nec tincidunt nunc nisl nec nisl. Nullam hendrerit, nisl nec
+              lacinia ultricies, nunc nisl ultricies libero, nec tincidunt nunc
+              nisl nec nisl.
+            </p>
+            <p>
+              Nullam hendrerit, nisl nec lacinia ultricies, nunc nisl ultricies
+              libero, nec tincidunt nunc nisl nec nisl. Nullam hendrerit, nisl
+              nec lacinia ultricies, nunc nisl ultricies libero, nec tincidunt
+              nunc nisl nec nisl.
             </p>
           </div>
+
           <div class="about-photo">
             <img src="myphoto.jpg" alt="Your Photo" />
           </div>
@@ -68,17 +72,15 @@
           >
         </div>
       </section>
-
-      <div class="content">
-        <section id="about" class="section concerts">
-          <div id="concerts-sidebar">
+      <section id="schedule" class="section schedule">
+        <h2>Schedule</h2>
+        <div id="schedule-container">
+          <div id="schedule-sidebar">
             <h2>Upcoming</h2>
             <ul id="upcomingEvents">
-              <li onclick="toggleDetails('event1', true)">
-                Concert at Town Hall - Sep 15, 2024
-              </li>
+              <!-- <li onclick="toggleDetails('event1', true)"></li> -->
               <li onclick="toggleDetails('event2', true)">
-                Recital at Museum - Sep 20, 2024
+                OAE Academy Orchestra @ London Sep 20, 2024
               </li>
               <!-- Add more events here -->
             </ul>
@@ -86,15 +88,14 @@
             <h2>Past Events</h2>
             <ul>
               <li onclick="toggleDetails('pastEvent1', false)">
-                Spring Concert - Mar 25, 2024
+                Flute Trio @ Tel Aviv Aug 21, 2024
               </li>
               <li onclick="toggleDetails('pastEvent2', false)">
-                Summer Gala - Jun 10, 2024
+                Harpsichord Recital @ Bozen Aug 11, 2024
               </li>
               <!-- Add more past events here -->
             </ul>
           </div>
-
           <div id="concert-content">
             <div id="defaultMessage" class="event-details">
               <h3>No Upcoming Events</h3>
@@ -156,14 +157,14 @@
 
             <!-- Additional event details can be added similarly -->
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
 
       <section id="contact" class="section contact">
         <h2>Contact</h2>
         <p>
           You can reach me at:
-          <a href="mailto:youremail@example.com">eden@eden.com</a>
+          <a href="mailto:youremail@example.com">youremail@example.com</a>
         </p>
       </section>
     </div>
